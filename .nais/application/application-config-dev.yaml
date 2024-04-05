@@ -97,6 +97,9 @@ spec:
         - application: azure-token-generator
           namespace: aura
           cluster: dev-gcp
+          permissions:
+            roles:
+              - "siste-14a-vedtak"
     outbound:
       external:
         - host: team-obo-unleash-web.nav.cloud.nais.io
