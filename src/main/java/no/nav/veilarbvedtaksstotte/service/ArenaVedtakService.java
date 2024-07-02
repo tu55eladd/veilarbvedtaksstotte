@@ -56,7 +56,7 @@ public class ArenaVedtakService {
     public Boolean behandleVedtakFraArena(ArenaVedtak arenaVedtak) {
 
         if (MODIA_REG_USER.equals(arenaVedtak.getRegUser())) {
-            log.info("Oppdaterer ikke vedtak fra Arena med hendelsesId={} der regUser={}", arenaVedtak.getHendelseId(), MODIA_REG_USER);
+            log.info("Oppdaterer ikke vedtak fra Arena med hendelsesId={} der regUser={}, bruker={}", arenaVedtak.getHendelseId(), MODIA_REG_USER, arenaVedtak.getFnr());
             return false;
         }
 
