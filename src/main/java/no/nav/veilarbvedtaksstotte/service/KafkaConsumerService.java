@@ -72,6 +72,7 @@ public class KafkaConsumerService {
     public void behandleArenaVedtak(ConsumerRecord<String, ArenaVedtakRecord> arenaVedtakRecord) {
         ArenaVedtak arenaVedtak = ArenaVedtak.fraRecord(arenaVedtakRecord.value());
         if (arenaVedtak != null) {
+            log.info("Behandler arena vedtak for bruker: "+arenaVedtak.getFnr());
             siste14aVedtakService.behandleEndringFraArena(arenaVedtak);
         } else {
             log.info(format("Behandler ikke melding fra Arena med kvalifiseringsgruppe = %s og hovedmål = %s",
